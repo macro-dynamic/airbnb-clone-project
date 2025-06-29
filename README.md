@@ -106,3 +106,31 @@ Stores user feedback for properties.
 - A **Property** can have many **Reviews** and **Bookings**.
 
 This structure ensures clear referential integrity and aligns with the provided API endpoints.
+
+
+## ✨ Feature Breakdown
+
+This project implements core functionalities of a property rental platform, replicating key workflows of Airbnb from both user and host perspectives.
+
+### 🧑‍💼 1. User Management
+Allows users to register, log in, and manage their profiles. Authentication ensures secure access, and profile features support both guests and hosts depending on user roles.
+
+### 🏠 2. Property Management
+Hosts can create, update, and manage property listings with details like title, description, price, and location. These listings form the core inventory available to users for booking.
+
+### 📅 3. Booking System
+Users can browse listings and book properties for specific dates. The system manages availability, check-in/check-out dates, and booking status (pending, confirmed, canceled).
+
+### 💳 4. Payment Processing
+Secure payment handling is implemented to process transactions related to bookings. Each booking is tied to a single payment record, and transaction status is tracked for success or failure.
+
+### ⭐ 5. Review System
+After their stay, users can leave reviews and star ratings for properties. This builds trust in the platform and provides valuable feedback for both hosts and future guests.
+
+### 🚀 6. API Design (REST + GraphQL)
+RESTful endpoints are provided for all core resources using Django REST Framework. Optional GraphQL support allows flexible, client-driven querying for performance and precision.
+
+### ⚙️ 7. Optimization & Performance
+Includes database indexing and Redis-based caching to optimize query performance. Celery is used for background tasks like sending notifications or handling asynchronous payments.
+
+
