@@ -186,3 +186,18 @@ Continuous Integration and Continuous Deployment (CI/CD) pipelines automate the 
 - **Docker**: Packages the backend and its dependencies into containers for consistent deployment.
 - **Heroku / Render / AWS / DigitalOcean (optional)**: Can be used as hosting platforms for staging or production environments.
 - **Coverage.py & pytest**: Used in the testing pipeline to track code quality and unit test success.
+
+
+
+| Section                  | Status | Notes                                                   |
+| ------------------------ | ------ | ------------------------------------------------------- |
+| ✔️ **Project Overview**  | ✅      | Clear purpose, goals, and stack                         |
+| ✔️ **Team Roles**        | ✅      | Includes responsibilities and aligns with project brief |
+| ✔️ **Technology Stack**  | ✅      | Describes each tool’s role in the system                |
+| ✔️ **Database Design**   | ✅      | Lists entities, key fields, and relationships           |
+| ✔️ **Feature Breakdown** | ✅      | 2–3 sentence descriptions of each core feature          |
+| ✔️ **API Security**      | ✅      | Lists clear security measures with reasons              |
+| ✔️ **CI/CD Pipeline**    | ✅      | Explains process and tools used                         |
+
+
+
