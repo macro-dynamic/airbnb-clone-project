@@ -172,3 +172,17 @@ What: Enforces expiration of session tokens and refresh tokens.
 
 Why: Limits exposure time if a token is compromised, and reduces the risk of replay attacks.
 
+## 🚀 CI/CD Pipeline
+
+Continuous Integration and Continuous Deployment (CI/CD) pipelines automate the testing, building, and deployment process of the backend application. This ensures that code changes are automatically verified and deployed, reducing the risk of bugs and improving team productivity.
+
+### ✅ Why It Matters
+- **Continuous Integration** ensures that new code is automatically tested and validated before merging, helping catch issues early.
+- **Continuous Deployment** enables fast, reliable delivery of new features and fixes to staging or production environments.
+- CI/CD reduces manual errors, accelerates release cycles, and improves overall software quality.
+
+### 🧰 Tools Used
+- **GitHub Actions**: Automates testing, linting, migrations, and deployment workflows for every push or pull request.
+- **Docker**: Packages the backend and its dependencies into containers for consistent deployment.
+- **Heroku / Render / AWS / DigitalOcean (optional)**: Can be used as hosting platforms for staging or production environments.
+- **Coverage.py & pytest**: Used in the testing pipeline to track code quality and unit test success.
