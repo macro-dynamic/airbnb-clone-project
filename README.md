@@ -29,3 +29,80 @@ This project uses a modern backend development stack to ensure performance, scal
 | **Redis**              | An in-memory data store used for caching and background task queuing via Celery. |
 | **Celery**             | A distributed task queue used to handle asynchronous tasks like sending confirmation emails or processing payments. |
 | **GitHub Actions**     | Provides CI/CD automation for testing and deploying the project on every code push or pull request. |
+
+
+## 🗄️ Database Design
+
+The AirBnB Clone backend relies on a relational database schema implemented in **PostgreSQL**. Below are the core entities and their relationships, aligned with the project’s REST API endpoints and features.
+
+### 🔑 Key Entities
+
+#### 1. Users
+Stores information for both guests and hosts.
+
+**Important Fields:**
+- `id` (Primary Key)
+- `username`
+- `email`
+- `password` (hashed)
+- `is_host` (Boolean: true if user can list properties)
+- `created_at` (timestamp)
+
+#### 2. Properties
+Represents listings created by hosts.
+
+**Important Fields:**
+- `id`
+- `title`
+- `description`
+- `location` (city, country, address)
+- `price_per_night`
+- `host_id` (Foreign Key to Users)
+- `created_at`
+
+#### 3. Bookings
+Tracks property reservations made by users.
+
+**Important Fields:**
+- `id`
+- `user_id` (FK to Users)
+- `property_id` (FK to Properties)
+- `start_date`
+- `end_date`
+- `status` (pending, confirmed, cancelled)
+- `created_at`
+
+#### 4. Payments
+Handles transactions for bookings.
+
+**Important Fields:**
+- `id`
+- `booking_id` (FK to Bookings)
+- `amount`
+- `status` (e.g., success, failed)
+- `payment_method`
+- `paid_at`
+
+#### 5. Reviews
+Stores user feedback for properties.
+
+**Important Fields:**
+- `id`
+- `user_id` (FK to Users)
+- `property_id` (FK to Properties)
+- `rating` (e.g., 1–5)
+- `comment`
+- `created_at`
+
+---
+
+### 🔗 Entity Relationships
+
+- A **User** can act as a **guest** or a **host**.
+- A **Host (User)** can create multiple **Properties**.
+- A **User** can make multiple **Bookings**, each linked to a specific **Property**.
+- A **Booking** has exactly one **Payment**.
+- A **User** can write multiple **Reviews** about **Properties** they’ve booked.
+- A **Property** can have many **Reviews** and **Bookings**.
+
+This structure ensures clear referential integrity and aligns with the provided API endpoints.
