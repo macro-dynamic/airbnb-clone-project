@@ -134,3 +134,41 @@ RESTful endpoints are provided for all core resources using Django REST Framewor
 Includes database indexing and Redis-based caching to optimize query performance. Celery is used for background tasks like sending notifications or handling asynchronous payments.
 
 
+🔐 API Security
+Securing the backend APIs is critical to maintaining the integrity, privacy, and trustworthiness of the AirBnB Clone platform. Below are the key security measures implemented in this project, along with the reasons behind each:
+
+1. Authentication
+What: Verifies user identity using token-based authentication (e.g., JWT).
+
+Why: Prevents unauthorized access to the system and ensures that only registered users can perform certain actions (e.g., booking, reviewing).
+
+2. Authorization
+What: Implements role-based access control (RBAC) to manage permissions for users (e.g., host vs guest).
+
+Why: Ensures users can only access or modify data they are allowed to (e.g., a host cannot delete another host’s property).
+
+3. Rate Limiting
+What: Restricts the number of API requests allowed per user/IP within a time window.
+
+Why: Protects the system from abuse, brute-force attacks, and denial-of-service (DoS) attempts.
+
+4. Input Validation & Sanitization
+What: Validates all incoming data and sanitizes user input to prevent injection attacks (SQL, XSS).
+
+Why: Prevents attackers from exploiting malformed data to compromise the system or extract sensitive information.
+
+5. HTTPS Enforcement
+What: Ensures all data exchanged between clients and the server is encrypted using HTTPS.
+
+Why: Protects sensitive data (passwords, payment info) from being intercepted during transmission.
+
+6. Secure Payment Handling
+What: Delegates payment processing to a trusted external payment gateway (e.g., Stripe or PayPal).
+
+Why: Reduces the risk of mishandling financial data and ensures compliance with PCI-DSS standards.
+
+7. Session & Token Expiry
+What: Enforces expiration of session tokens and refresh tokens.
+
+Why: Limits exposure time if a token is compromised, and reduces the risk of replay attacks.
+
